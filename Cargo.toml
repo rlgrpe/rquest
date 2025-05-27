@@ -84,7 +84,7 @@ antidote = "1"
 
 # core
 bytes = "1.2"
-http = "1"
+http = { version = "1", features = ["title-case-header-name"] }
 http-body = "1"
 tokio = { version = "1", default-features = false, features = ["net","time","rt"] }
 atomic-waker = "1.1.2"
@@ -188,6 +188,9 @@ pretty_env_logger = "0.5"
 
 [lib]
 doctest = false
+
+[patch.crates-io]
+http = { git = "https://github.com/rlgrpe/http.git" }
 
 [[test]]
 name = "cookie"
